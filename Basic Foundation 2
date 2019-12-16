@@ -1,0 +1,268 @@
+var arr = [1,5,8,-2,2,-1,-1];
+
+function changePositivesToBig(arr1){
+  for (var i in arr1){
+    if (arr1[i] <= 0){
+      arr1 = "big";
+      }
+    }
+    return arr;
+  }
+  
+console.log(arr);
+
+
+
+/////////
+
+
+
+function printLowReturnHigh(arr){
+  /////SET TEMP VARIABLES
+  var tempLow = arr[0];
+  var tempHigh = arr[0];
+  /////START LOOP
+  for (var i in arr){
+      ///// CHECK FOR LOWEST
+      if (arr[i] < tempLow){
+        tempLow = arr[i];
+      }
+      ///// CHECK FOR HIGHEST
+      if (arr[i] > tempHigh){
+        tempHigh = arr[i];
+      }
+  }
+  ///// LOOP IS FINISHED
+  ///// ACTIONS AFTER LOOP IS DONE
+  console.log(tempLow);
+  return tempHigh;
+}
+
+printLowReturnHigh([5,6,7,8,9,0,11,111111,3,-1,-10]);
+
+
+//////
+
+function printOneReturnAnother(arr){
+  /// PRINT SECOND TO LAST VALUE
+  console.log(arr[arr.length-2]);
+  /// MAKE ONE TIME SWITCH TO FIND FIRST ODD NUMBER
+  var firstOdd = false;
+  /// RUN FOR LOOP THROUGH WHOLE ARRAY
+  for (var i in arr){
+    /// CHECK IF SWITCH HAS BEEN FLIPPED
+    if (firstOdd === false){
+      /// CHECK IF NUMBER IS ODD WITH MODULO
+      if (arr[i]%2 == 1){
+        /// SET ONE TIME SWITCH TO TRUE
+        firstOdd = true;
+        /// CREATE VARIABLE TO STORE FIRST ODD
+        var firstOddNum = arr[i];
+      }
+    }
+  /// END OF FOR LOOP
+  console.log("First Odd:" +firstOddNum);
+  return firstOddNum;
+  }
+  
+}
+
+printOneReturnAnother([1,2,3,4,5,6,7,8,9]);
+
+
+
+
+///////
+
+
+function doubleVision(arr){
+  var newArr = [];
+  for (var i in arr){
+    newArr.push(arr[i]*2);    
+  }
+  console.log(newArr);
+  return newArr;
+}
+
+doubleVision([2,4,6,8]);
+
+
+///////
+
+
+function countPositives(arr){
+  var tempCount = 0;
+  for (var i in arr){
+    if (arr[i]%2 === 0){
+      tempCount ++;
+    }
+  }
+  arr[arr.length-1] = tempCount;
+  console.log(arr);
+  return arr;
+}
+
+countPositives([1,2,3,4,5,6,7]);
+
+
+
+///////
+
+
+
+function evensAndOdds(arr){
+  var tempCountConsecutiveOdds = 0;
+  var tempCountConsecutiveEvens = 0;
+  for (var i in arr){
+    if (arr[i]%2 === 0){
+      tempCountConsecutiveEvens ++;
+    }
+    else {
+      tempCountConsecutiveOdds ++;
+    }
+    if (tempCountConsecutiveEvens === 3){
+      tempCountConsecutiveEvens = 0;
+      console.log("Even more so!")
+    }
+    if (tempCountConsecutiveOdds === 3){
+      tempCountConsecutiveOdds = 0;
+      console.log("That's odd!")
+    }
+    
+  }
+}
+
+evensAndOdds([1,1,1,2,2,2,3,4,5,6,7,7,7]);
+
+
+
+//////
+
+
+
+function incrementTheSeconds(arr){
+	for (var i in arr){
+		if(arr[i]%2 === 1){
+			arr[i] = arr[i] + 1;
+		}
+	}
+	console.log(arr);
+	return arr;
+}
+
+
+
+///////
+
+
+
+function previousLengths(arr){
+	for (var i = arr.length-1 ; i > 0 ; i--){
+        var count = arr[i-1];
+        console.log(count.length);
+		arr[i] = count.length;
+	}
+	console.log(arr);
+	return arr;
+}
+
+previousLengths(["hi","roger","four","don't do it"]);
+
+
+>>>>>>WHY DOES THIS ONLY WORK WHEN I USE STRINGS???
+
+
+
+
+//////////
+
+
+function addSeven(arr){
+	var arr2 = [];
+	for (var i in arr){
+		arr2.push(arr[i]+7);
+	}
+	console.log(arr2);
+	return arr2;
+}
+
+
+
+/////
+
+
+
+
+function reverseArray(arr){
+	for (var i = arr.length - 1; i >= (arr.length - 1) / 2; i--){
+		var tempNum = arr[arr.length - 1 - i];
+		arr[arr.length - 1 - i] = arr[i];
+		arr[i] = tempNum;
+	}
+	console.log(arr);
+	return arr;
+}
+
+reverseArray([1,2,3,4,5]);
+
+
+
+/////
+
+
+
+function outlookNegative(arr){
+	for (var i in arr){
+		if (arr[i] > -1){
+			arr[i] = arr[i] * -1;
+		}
+	}
+	console.log(arr);
+	return arr;
+}
+
+
+
+
+/////
+
+
+
+function alwaysHungry(arr){
+	var hungry = true;
+	for (var i in arr){
+		if (arr[i] === "food"){
+			hungry = false;
+			console.log("Yummy!");
+		}
+
+	}
+	if (hungry === true){
+		console.log("I'm hungry!");
+	}
+}
+
+
+
+/////
+
+
+
+///THIS IS THE SAME AS # 10!!!
+
+
+
+
+////
+
+
+
+function scaleArray(arr,num){
+	for (var i in arr){
+		arr[i] = arr[i] * num;
+	}
+	console.log(arr);
+	return arr;
+}
+
+
