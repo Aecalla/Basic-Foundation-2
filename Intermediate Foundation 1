@@ -1,0 +1,139 @@
+function sigma(num){
+  var tempNum = 0;
+  for (var i = 1; i <= num; i++){
+    tempNum = tempNum + i;
+  }
+  console.log(tempNum);
+}
+
+sigma(7);
+
+
+
+/////
+
+
+
+function factorial(num){
+  tempNum = 1;
+  for (var i = 1; i <= num; i++){
+    tempNum = tempNum * i;
+  }
+  console.log(tempNum);
+}
+
+factorial(5);
+
+
+
+/////
+
+
+
+function fibonacci(num){
+  var fibonacciTable = [0,1,1];
+  if (num < 3){
+    num = 1;
+  }
+  else{
+    for (var i = 3; i <= num; i++){
+      fibonacciTable.push(fibonacciTable[i-1] + fibonacciTable[i-2]);
+    }
+  }
+  num = fibonacciTable[num];
+  console.log(num);
+  return num;
+  
+}
+
+fibonacci(7);
+
+
+
+/////
+
+
+
+function secondToLast(arr){
+  var secontToLastNum = 0
+  if (arr.length > 1){
+    secondToLastNum = arr[arr.length - 2];
+  }
+  else {
+    secondToLastNum = null;
+  }
+  console.log(secondToLastNum);
+  return secondToLastNum;
+}
+
+secondToLast([1,2,3,4]);
+secondToLast([1]);
+
+
+
+/////
+
+
+
+function nthFromLast(arr, num){
+  var nthFromLastNum = 0;
+  if (arr.length < num){
+    nthFromLastNum = null;
+  }
+  else {
+    nthFromLastNum = arr[arr.length - num];
+  }
+  console.log(nthFromLastNum);
+}
+
+nthFromLast([2,3,4,5],4);
+nthFromLast([2,3,4,5],6);
+
+
+
+/////
+
+
+
+function secondLargest(arr){
+  var tempMax = 0;
+  var secondLargestNum = 0;
+  if (arr.length < 2){
+    secondLargestNum = null;
+  }
+  else {
+    for (var i in arr){
+      if (arr[i] > tempMax){
+        tempMax = arr[i];
+      }
+    }
+    for (var i in arr){
+      if (arr[i] > secondLargestNum){
+        if (arr[i] < tempMax){
+      	secondLargestNum = arr[i];
+        }
+        }
+      }
+  console.log(tempMax);
+  console.log(secondLargestNum);
+}
+}
+
+secondLargest([1,2,3,4,7,2]);
+
+
+/////
+
+
+
+function doubleTrouble(arr){
+  var newArr = [];
+  for (var i in arr){
+    newArr.push(arr[i]);
+    newArr.push(arr[i]);
+  }
+  console.log(newArr);
+  return newArr;
+}
+
+doubleTrouble([1,2,3,4]);
